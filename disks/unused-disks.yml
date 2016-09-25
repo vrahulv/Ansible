@@ -1,0 +1,11 @@
+---
+ - name: freespace!
+   hosts: all
+#   connection: local
+
+
+   tasks:
+
+     - debug: msg="Gluster node named {{ansible_hostname}} with ipaddress {{ansible_default_ipv4.address}} of device {{ item.key }} has no partitions and it's size is {{item.value.size}}"
+       with_dict: ansible_devices
+       when: not item.value.partitions and item.key!="sr0"

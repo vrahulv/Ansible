@@ -1,0 +1,8 @@
+---
+- hosts: gluster
+  tasks:
+    - name: Enable RHEL-7 yum repository
+      command: subscription-manager repos --enable=rhel-7-server-rpms 
+   
+    - name : perform yum update
+      command : yum update -y

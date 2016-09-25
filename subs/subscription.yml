@@ -1,0 +1,4 @@
+---
+ - hosts: hosts
+   tasks:
+      - redhat_subscription: state=present username=rhn_account password=xxxx@xxxx.com autosubscribe=true
